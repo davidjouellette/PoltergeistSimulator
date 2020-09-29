@@ -31,16 +31,17 @@ def configure():
     global hauntMode
     global playlistLoop
     for line in configLines:
-        if "maximum_time" in line:
-            hauntIntervalMax = int(re.findall(r"\d+",line)[0])
-        if "minimum_time" in line:
-            hauntIntervalMin = int(re.findall(r"\d+",line)[0])
-        if "activation_mode" in line:
-            hauntMode = int(re.findall(r"\d+",line)[0])
-        if "playlist_Mode" in line:
-            playlistLoop = int(re.findall(r"\d+",line)[0])
-        if "total_duration" in line:
-            duration = int(re.findall(r"\d+",line)[0])
+        if "#" not in line:
+            if "maximum_time" in line:
+                hauntIntervalMax = int(re.findall(r"\d+",line)[0])
+            if "minimum_time" in line:
+                hauntIntervalMin = int(re.findall(r"\d+",line)[0])
+            if "activation_mode" in line:
+                hauntMode = int(re.findall(r"\d+",line)[0])
+            if "playlist_Mode" in line:
+                playlistLoop = int(re.findall(r"\d+",line)[0])
+            if "total_duration" in line:
+                duration = int(re.findall(r"\d+",line)[0])
     if playlistMode !=2:
         random.shuffle(sounds)
 # Here we use the Raspberry Pi's onboard omxplayer to deal with any number of
