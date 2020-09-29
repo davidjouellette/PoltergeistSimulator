@@ -8,23 +8,27 @@ maximum_time = 10
 # Activation mode: sets the main operation of your ghost. 0 = 
 # just play sounds, 1 = sounds or GPIO triggers (for controling
 # external electronics like halloween decorations, lights, etc.)
-# 2 = sounds AND GPIO triggers, 3 = sounds AND GPIO triggers and
-# coordinates them, so the same GPIO trigger pattern is always 
+# 2 = sounds AND GPIO triggers, 3 = sounds AND GPIO triggers as
+# pairs, so the same GPIO trigger pattern is always 
 # played with the same sound, and finally 4 = just GPIO triggers
 activation_mode = 3
 
 # Playlist mode: the sound library is loaded as a playlist.
-# 0 = random sound from the list, 1 = shuffled playlist, 2 = 
-# shuffled playlist but repeats instead of reshuffling at the 
-# end, and 3 = non-random looping playlist that goes in the
-# same order they appear in the folder.
+# 0 = random sound from the list (so repeats are possible),
+# 1 = shuffled playlist that reshuffles after reaching the end,
+# 2 = shuffled playlist that repeats instead of reshuffling,
+# 3 = playlist that goes in alphabetical order and loops at the end
 playlist_mode = 0
 
 # GPIO trigger playlist mode: Just like the sounds, you can set
 # a "playlist" of GPIO activation patterns. You can specify the
 # patterns in the GPIO_playlist.txt file, or just leave the 
 # default pattern. The playlist modes work the same way as
-# they do for the sounds.
+# they do for the sounds. If you're using activation mode 2,
+# the GPIO playlist mode will be overridden to the value of
+# playlist_mode. In addition, make sure the number of patterns
+# in GPIO_playlist.txt matches the number of sounds in the
+# playlist folder.
  GPIO_playlist_mode = 0
 
 # Set the duration of the program in seconds. It's fine to
