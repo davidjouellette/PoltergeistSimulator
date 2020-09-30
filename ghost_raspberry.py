@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep 11 22:14:17 2018
-
 @author: Dave
 """
 
